@@ -283,7 +283,8 @@ class dbase
         <p></p>
         
         <h2 class="fw-bold mt-5">How this code was used?</h2>
-        <textarea id='text-area' rows="30" class="language-php" disabled="true" >
+        <pre class="mb-0">
+            <code class="language-php">
 
 //create new object
 $db =   new dbase;
@@ -316,7 +317,7 @@ $db->query("DELETE FROM `students` WHERE id = :id");
 $db->bind(':id',$id,PDO::PARAM_STR);
 $db->execute();
 
-</textarea> 
+            </code></pre> 
         <p>It was observed that we don't need to utilize <code>execute()</code> for <code>SELECT</code> MySQL queries</p>
         <h5 class="fw-bold">References</h5>
         
@@ -324,22 +325,33 @@ $db->execute();
     <!-- Section 1 End -->
     <!-- Section 2 Start -->
     <div id='php-remove-contents-before-and-after-a-character-inclusive' class="container py-5">
-        <h1 class="fw-bold display-4"><span class="text-primary">PHP:</span> REMOVE EVERYTHING IN A STRING THAT COMES BEFORE A CHARACTER, INCLUDING THE CHARACTER</h1>
+        <h1 class="fw-bold display-4"><span class="text-primary">PHP:</span> REMOVE EVERYTHING IN A STRING THAT COMES BEFORE/ AFTER A CHARACTER, INCLUDING THE CHARACTER</h1>
         <h2 class="fw-bold mt-5">Code Description</h2>
-        <p>This can be achieved using string manipulation functions in PHP. First we find the position of the desired character in the string using strpos(), substr(), ltrim, and trim()</p>
+        <p>This can be achieved using string manipulation functions in PHP. First we find the position of the desired character in the string using <code>strpos()</code>, <code>substr()</code>, <code>ltrim</code>, and <code>trim()</code></p>
+
+        <h3 >Before</h3>
         <pre class="mb-0">
             <code class="language-php">
-        $new_name = substr($old_name, strpos($old_name, '_') + 1);
+        $new_string = substr($old_string, strpos($old_string, '_') + 1);
             </code>
         </pre>
         <p>or</p>
         <pre class="mb-0">
             <code class="language-php">
-        $new_name = ltrim(stristr($old_name, '_'), '_');
+        $new_string = ltrim(stristr($old_string, '_'), '_');
             </code>
         </pre>
+
+        <h3 >After</h3>
+        <pre class="mb-0">
+            <code class="language-php">
+                $new_string = substr($old_string, 0, strpos($old_string, "-"));
+            </code>
+        </pre>
+        
+
         <h2 class="fw-bold mt-5">How this code works?</h2>
-        <p>The above code was used to fix a problem with the global variable <code>$_GET[]</code> when calling pages on the index.php file for back-end applications. The code was used to check for string after the first question sign (?) and then usaed again to find the first equal sign after the current page URL using <code>$_SERVER["REQUEST_URI"]</code>. This process requires two stages. </p>
+        <p>The above code was used to fix a problem with the global variable <code>$_GET[]</code> when calling pages on the index.php file for our back-end applications. The code was used to check the string in the url after index.php? by removing the question sign (?) before it and any other sign after it primarily an equal sign or an ampersand after it. The global variable <code>$_SERVER["REQUEST_URI"]</code> was used to grab the url. The process required two stages. </p>
         <h3>Part 1: Remove question mark and everything before it </h3>
         <pre>
             <code class="language-php">
@@ -355,7 +367,7 @@ studentprofile=C3836B2C
         <h3>Part 2: Remove equal sign and everything after it from the previous code executed </h3>
         <pre>
             <code class="language-php">
-//set input variabl
+//set input variable
 //variable
 $question_mark_check = "studentprofile=C3836B2C"
 $equal_sign_check = substr($question_mark_check, strpos($question-mark_check, '=') + 1)
@@ -364,20 +376,58 @@ studentprofile
         </code>
         </pre>
         <h2 class="fw-bold mt-5">Issues implementing this code</h2>
-        <p>There was one issue encountered when using this code. The code returns an empty value iF the url does not have an equal sign in the string. To resolve this an if statement was used.</p>
+        <p>There was one issue encountered when using this code. The code returns an empty value if the url does not have an equal sign or the ampersand in the string. To resolve this an if statement was used.</p>
         <pre>
             <code class="language-php">
-function getSlug()
-{
-  //check if url has the = sign, if no then trim everything before the '?' including the '?'
-  if (empty(substr($_SERVER["REQUEST_URI"], 0, strpos($_SERVER["REQUEST_URI"], "=")))) {
-    return ltrim(stristr($_SERVER["REQUEST_URI"], '?'), '?');
-  }
-  //else if the = sign is present then trim the = sign and everything after it also
-  else {
-    $question_mark_check = ltrim(stristr($_SERVER["REQUEST_URI"], '?'), '?');
-    return substr($question_mark_check, 0, strpos($question_mark_check, "="));
-  }
+                
+function getSlug() {        
+    //get url from server and asign it to a variable
+    $url = $_SERVER["REQUEST_URI"];
+    
+    //remove the last string in in url after the & sign
+    $removed_last_string = substr($url, 0, strpos($url, "&"));
+   
+    //check to see if there was an & sign was present
+    if(!empty($removed_last_string)){
+
+    //if yes, remove the ? from the beginning of the string
+    $almost_cleaned_string = ltrim(stristr($removed_last_string, '?') , '?');
+       
+        //check to see if the string contains an equal sign
+        if(strpos($almost_cleaned_string, '=')){
+
+        //if yes, remove it 
+            $cleaned_string =  substr($almost_cleaned_string, 0, strpos($almost_cleaned_string, "="));
+            return $cleaned_string;
+        }else{
+       
+        //if not, then return the previously sanitized string 
+        $cleaned_string = $almost_cleaned_string;
+        return $cleaned_string;
+        }
+   
+    }
+    //check to see if there was not & sign was present
+    elseif(empty($removed_last_string)){
+
+        //check to see if the string contains an equal sign 
+        $almost_cleaned_string = substr($url, 0, strpos($url, "="));
+       
+        //then check to see if it produced an empty result
+        if(!empty($almost_cleaned_string)){
+            
+            //if no, remove the question mark at the beginning and return the sanitized string
+            $cleaned_string = ltrim(stristr($almost_cleaned_string, '?') , '?');
+            return $cleaned_string;
+
+        }else{
+
+            //if yes, remove the question mark at the beginning of the original url string
+            $cleaned_string = ltrim(stristr($url, '?') , '?');
+            return $cleaned_string;
+        }
+    }
+   
 }
             </code>
         </pre>
@@ -823,10 +873,10 @@ if the year is
     <!-- Section End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary rounded back-to-top"><i class="fa fa-arrow-up"></i></a>
-
+   
 
     <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="lib/jquery/jquery-3.6.0.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/highlight/highlight.min.js"></script>

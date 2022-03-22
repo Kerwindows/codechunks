@@ -63,5 +63,32 @@ jQuery(document).ready(function() {
     }
 });
 
-
    
+   //replace -&gt; with -> in code block
+    var word='-&gt;'; // put your word here
+    var regex = new RegExp(word, "gi")
+       
+    var count_elements = $('body').text().match(regex).length;
+    console.log(count_elements);
+        
+        for (let i = 0; i < count_elements; i++) {
+            $("code").text(function (index, text) {
+                return text.replace('-&gt;', "->");
+            });
+            }
+            
+    //replace &amp with & in code block
+    var word='&amp;'; // put your word here
+    var regex = new RegExp(word, "gi")
+       
+    var count_elements = $('body').text().match(regex).length;
+    console.log(count_elements);
+        
+        for (let i = 0; i < count_elements; i++) {
+            $("code").text(function (index, text) {
+                return text.replace('&amp;', "&");
+            });
+            }
+
+    
+    
