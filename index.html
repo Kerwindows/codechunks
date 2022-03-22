@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PHP and JS Code Snippets</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/highlight/default.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+
+    <!-- Sidebar Start -->
+    <button class="btn btn-lg btn-primary btn-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+        <i class="fa fa-bars"></i>
+    </button>
+    <!-- Sidebar Start -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasSidebar"
+        aria-labelledby="offcanvasSidebarLabel">
+        <div class="offcanvas-header border-bottom">
+            <h2 class="fw-bold mb-0"><i class="fa fa-code me-2"></i>DevDocs</h2>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="flex-shrink-0 bg-white">
+                <ul class="list-unstyled ps-0">
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#home-collapse" aria-expanded="true">
+                            PHP Section 1
+                        </button>
+                        <div class="collapse show" id="home-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a id="section-1-1" href="#php-connected-to-database-with-pdo" class="text-body rounded">🐘 PDO MySQL Connect</a></li>
+                                <li><a id="section-1-2" href="#php-remove-contents-before-and-after-a-character-inclusive" class="text-body rounded">🐘 How to remove contents from a string?</a></li>
+                                <li><a id="section-1-3" href="#php-create-aside-navs-for-admin-lte" class="text-body rounded">🐘 How to create aside class for AdminLTE</a></li>
+                                <li><a id="section-1-4" href="#php-how-to-age-birthday-from-year" class="text-body rounded">🐘 How to calculate age from year?</a></li>
+                                <li><a href="#section-1-5" class="text-body rounded">Section Iten 1.5</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#collapse-2" aria-expanded="false">
+                            JQuery Section 1
+                        </button>
+                        <div class="collapse" id="collapse-2">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a id="section-6" href="#section-2-1" class="text-body rounded">Section Iten 2.1</a></li>
+                                <li><a href="#section-2-2" class="text-body rounded">Section Iten 2.2</a></li>
+                                <li><a href="#section-2-3" class="text-body rounded">Section Iten 2.3</a></li>
+                                <li><a href="#section-2-4" class="text-body rounded">Section Iten 2.4</a></li>
+                                <li><a href="#section-2-5" class="text-body rounded">Section Iten 2.5</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#collapse-3" aria-expanded="false">
+                            Section Iten 3
+                        </button>
+                        <div class="collapse" id="collapse-3">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#section-3-1" class="text-body rounded">Section Iten 3.1</a></li>
+                                <li><a href="#section-3-2" class="text-body rounded">Section Iten 3.2</a></li>
+                                <li><a href="#section-3-3" class="text-body rounded">Section Iten 3.3</a></li>
+                                <li><a href="#section-3-4" class="text-body rounded">Section Iten 3.4</a></li>
+                                <li><a href="#section-3-5" class="text-body rounded">Section Iten 3.5</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#collapse-4" aria-expanded="false">
+                            Section Iten 4
+                        </button>
+                        <div class="collapse" id="collapse-4">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#section-4-1" class="text-body rounded">Section Iten 4.1</a></li>
+                                <li><a href="#section-4-2" class="text-body rounded">Section Iten 4.2</a></li>
+                                <li><a href="#section-4-3" class="text-body rounded">Section Iten 4.3</a></li>
+                                <li><a href="#section-4-4" class="text-body rounded">Section Iten 4.4</a></li>
+                                <li><a href="#section-4-5" class="text-body rounded">Section Iten 4.5</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#collapse-5" aria-expanded="false">
+                            Section Iten 5
+                        </button>
+                        <div class="collapse" id="collapse-5">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#section-5-1" class="text-body rounded">Section Iten 5.1</a></li>
+                                <li><a href="#section-5-2" class="text-body rounded">Section Iten 5.2</a></li>
+                                <li><a href="#section-5-3" class="text-body rounded">Section Iten 5.3</a></li>
+                                <li><a href="#section-5-4" class="text-body rounded">Section Iten 5.4</a></li>
+                                <li><a href="#section-5-5" class="text-body rounded">Section Iten 5.5</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <a class="btn w-100 text-start" href="#section-end">Section Iten End</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas-footer border-top text-center mt-auto p-3">
+			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+			<small>Designed by <a href="#">Cyversify & KodeLamp</a>
+            </small>
+        </div>
+    </div>
+    <!-- Sidebar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary py-5 mb-5">
+        <div class="row py-5">
+            <div class="col-md-3 offset-md-1">
+                <img src="./img/kodelamp.png"width="100%" alt="">
+            </div>
+            <div class="col-md-4 text-center">
+                <h1 class="display-1 fw-bold text-white mb-4"><i class="fa fa-code me-2"></i>DevDocs</h1>
+                <h3 class="fw-bold text-white mb-3">PHP and JS Code Chunks</h3>
+                <h5 class="fw-bold text-white mb-3">Designed by <a class="text-white" href="#">Cyversify & KodeLamp</a></h5>
+            </div>
+            <div class="col-md-3">
+                <img src="./img/cyversify.png"width="100%" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <div class="container py-5">
+        <h1 class="fw-bold display-4">Start</h1>
+        <p>This document was created as a repository for all of our code snippets used on various projects. This includes:</p>
+       <ul>
+           <li class="text-primary">A description of the code</li>
+           <li class="text-primary">How the code works?</li>
+           <li class="text-success">Issues implementing this code</li>
+           <li class="text-success">How the code was used?</li>
+           <li class="text-secondary">An example of the code used</li>
+           <li class="text-secondary">Code reference if applicable</li>
+           <li class="text-danger">How it may be improved?</li>
+           
+       </ul>
+    </div>
+    <!-- Section 1 Start -->
+    <div id='php-connected-to-database-with-pdo' class="container py-5">
+        <h1 class="fw-bold display-4"><span class="text-primary">PHP:</span> CONNECTING TO DATABASE WITH PDO PREPARED STATEMENTS</h1>
+        <h2 class="fw-bold mt-5">Code Description</h2>
+        <p>This class simplifies the the connection to a database using <code>query()</code>, <code>bind()</code>, <code>execute()</code>, <code>fetchSingle()</code>, <code>fetchMultiple()</code> and <code>fetchCount()</code></p>
+        
+        <textarea id='text-area' rows="30" class="language-php" disabled="true" >
+/**
+* Class and Function List:
+* Function list:
+* - __construct()
+* - query()
+* - bind()
+* - execute()
+* - fetchSingle()
+* - fetchMultiple()
+* - fetchCount()
+* Classes list:
+* - dbase
+*/
+class dbase
+{
+
+    //connection properties
+    private $host   = "localhost";
+    private $user   = "user";
+    private $pwd    = "password";
+    private $dbname = "databasename";
+
+    //connection handler
+    private $dbh;
+
+    //error handler
+    private $error;
+
+    //statement handler
+    private $stmt;
+
+    //open our connection
+    
+    public function __construct()
+    {
+
+        $dsn            = "mysql:host=" . $this->host . ";dbname=" . $this->dbname;
+        $options        = array(
+            PDO::ATTR_PERSISTENT => true,
+            PDO::ATTR_ERRMODE    => PDO::ERRMODE_EXCEPTION
+        );
+
+        //PDO
+        try
+        {
+            $this->dbh      = new PDO($dsn, $this->user, $this->pwd, $options);
+            //echo "Connection Successful";
+        }
+        catch(PDOException $errorobj)
+        {
+            $this->error    = $errorobj->getMessage();
+            echo $this->error;
+        }
+    }
+
+    //method to handle query statement
+    public function query($query)
+    {
+        $this->stmt = $this
+            ->dbh
+            ->prepare($query);
+    }
+
+    //method to bind values
+    public function bind($param, $value, $type)
+    {
+        $this
+            ->stmt
+            ->bindValue($param, $value, $type);
+    }
+
+    //method to execute statement
+    public function execute()
+    {
+        return $this
+            ->stmt
+            ->execute();
+    }
+
+    //method to fetch single value
+    public function fetchSingle()
+    {
+        $this->execute();
+        return $this
+            ->stmt
+            ->fetch(PDO::FETCH_ASSOC);
+    }
+
+    //method to fetch multiple values
+    public function fetchMultiple()
+    {
+        $this->execute();
+        return $this
+            ->stmt
+            ->fetchAll(PDO::FETCH_ASSOC);
+    }
+    //method to fetch count
+    public function fetchCount()
+    {
+        $this->execute();
+        return $this
+            ->stmt
+            ->rowCount();
+    }
+}
+            </textarea>
+        
+        <h2 class="fw-bold mt-5">How this code works?</h2>
+        <p>When you create a new object <code>new dbase;</code>, it tries to connect to the database. The MySQL query is then passed into the function <code>query()</code>. The function <code>bind()</code> is then used to bind any variables specified into the query. Finally, we use <code>execute()</code> to run the statement.</p>
+
+        <pre><code>query('SQL STATEMENTS');</code></pre>
+        
+        <pre><code>bind(':variable','value',PDO::PARAM_STR);</code></pre>
+
+        <pre><code>execute();</code></pre>
+
+        <h2 class="fw-bold mt-5">Issues implementing this code</h2>
+        <p></p>
+        
+        <h2 class="fw-bold mt-5">How this code was used?</h2>
+        <textarea id='text-area' rows="30" class="language-php" disabled="true" >
+
+//create new object
+$db =   new dbase;
+//SELECT
+$id =   '123ABC';
+$db->query("SELECT FirstName FROM `students` WHERE id = :id");
+$db->bind(':id',$id,PDO::PARAM_STR);  
+$student = $db->fetchSingle();  
+echo $student['FirstName
+
+//UPDATE
+$id =   '123ABC';
+$FirstName  =   'Kerwin';
+$db->query("UPDATE `students` SET FirstName = :fname WHERE id = :id");
+$db->bind(':fname',$FirstName,PDO::PARAM_STR);
+$db->bind(':id',$id,PDO::PARAM_STR);
+$db->execute();
+
+//INSERT
+$FirstName  =   'Yovanni';
+$LastName   =   'Emmanuel';
+$db->query("INSERT INTO `students` (`FirstName`,`LastName`) VALUES (:fname,:lname)");
+$db->bind(':fanme',$FirstName,PDO::PARAM_STR);
+$db->bind(':lname',$LastName,PDO::PARAM_STR);
+$db->execute();
+
+//DELETE
+$id =   '123ABC';
+$db->query("DELETE FROM `students` WHERE id = :id");
+$db->bind(':id',$id,PDO::PARAM_STR);
+$db->execute();
+
+</textarea> 
+        <p>It was observed that we don't need to utilize <code>execute()</code> for <code>SELECT</code> MySQL queries</p>
+        <h5 class="fw-bold">References</h5>
+        
+    </div>
+    <!-- Section 1 End -->
+    <!-- Section 2 Start -->
+    <div id='php-remove-contents-before-and-after-a-character-inclusive' class="container py-5">
+        <h1 class="fw-bold display-4"><span class="text-primary">PHP:</span> REMOVE EVERYTHING IN A STRING THAT COMES BEFORE A CHARACTER, INCLUDING THE CHARACTER</h1>
+        <h2 class="fw-bold mt-5">Code Description</h2>
+        <p>This can be achieved using string manipulation functions in PHP. First we find the position of the desired character in the string using strpos(), substr(), ltrim, and trim()</p>
+        <pre class="mb-0">
+            <code class="language-php">
+        $new_name = substr($old_name, strpos($old_name, '_') + 1);
+            </code>
+        </pre>
+        <p>or</p>
+        <pre class="mb-0">
+            <code class="language-php">
+        $new_name = ltrim(stristr($old_name, '_'), '_');
+            </code>
+        </pre>
+        <h2 class="fw-bold mt-5">How this code works?</h2>
+        <p>The above code was used to fix a problem with the global variable <code>$_GET[]</code> when calling pages on the index.php file for back-end applications. The code was used to check for string after the first question sign (?) and then usaed again to find the first equal sign after the current page URL using <code>$_SERVER["REQUEST_URI"]</code>. This process requires two stages. </p>
+        <h3>Part 1: Remove question mark and everything before it </h3>
+        <pre>
+            <code class="language-php">
+//get ur
+//global variable:
+$_SERVER["REQUEST_URI"] = "/biz/cuc/index.php?studentprofile=C3836B2C";
+        
+$question_mark_check = ltrim(stristr($_SERVER["REQUEST_URI"], '?'), '?')
+//output: 
+studentprofile=C3836B2C
+        </code>
+        </pre>
+        <h3>Part 2: Remove equal sign and everything after it from the previous code executed </h3>
+        <pre>
+            <code class="language-php">
+//set input variabl
+//variable
+$question_mark_check = "studentprofile=C3836B2C"
+$equal_sign_check = substr($question_mark_check, strpos($question-mark_check, '=') + 1)
+//output: 
+studentprofile
+        </code>
+        </pre>
+        <h2 class="fw-bold mt-5">Issues implementing this code</h2>
+        <p>There was one issue encountered when using this code. The code returns an empty value iF the url does not have an equal sign in the string. To resolve this an if statement was used.</p>
+        <pre>
+            <code class="language-php">
+function getSlug()
+{
+  //check if url has the = sign, if no then trim everything before the '?' including the '?'
+  if (empty(substr($_SERVER["REQUEST_URI"], 0, strpos($_SERVER["REQUEST_URI"], "=")))) {
+    return ltrim(stristr($_SERVER["REQUEST_URI"], '?'), '?');
+  }
+  //else if the = sign is present then trim the = sign and everything after it also
+  else {
+    $question_mark_check = ltrim(stristr($_SERVER["REQUEST_URI"], '?'), '?');
+    return substr($question_mark_check, 0, strpos($question_mark_check, "="));
+  }
+}
+            </code>
+        </pre>
+        <h2 class="fw-bold mt-5">How this code was used?</h2>
+        <pre class="mb-0">
+            <code class="language-php">
+switch (getSlug())
+{
+    case 'studentprofile':
+        include (CUC_VIEW_PATH . '/studentprofile.php');
+    break;
+    default:
+        include (CUC_VIEW_PATH . '/dashboard.php');
+} 
+            </code>
+        </pre>  
+        <h5 class="fw-bold">References</h5>
+        <ul>
+            <li><a href="https://www.tallahasseedrupaldevelopers.com/tools-and-tips/php-remove-everything-and-including-character-string#:~:text=Home%20%C2%BB%20Tools%20%26%20Tips%20%C2%BB%20PHP%3A%20Remove,strpos%20%28%29%2C%20substr%20%28%29%2C%20ltrim%2C%20and%20trim%20%28%29">www.tallahasseedrupaldevelopers.com | Remove string before a character in PHP</a></li>
+            <li><a href="https://www.tallahasseedrupaldevelopers.com/tools-and-tips/php-remove-everything-after-and-including-string">www.tallahasseedrupaldevelopers.com  | Remove string  after a character PHP</a></li>
+        </ul>
+    </div>
+    <!-- Section 2 End -->
+    <!-- Section 3 Start -->
+    <div id='php-create-aside-navs-for-admin-lte' class="container py-5">
+            <h1 class="fw-bold display-4"><span class="text-primary">PHP:</span> HOW TO CREATE ASIDE CLASS FOR FOR Admin<span class="text-success">LTE</span></h1>
+            
+            <img class="img-fluid img-thumbnail mt-5" style="min-width:-320px;max-width:600px"  src="img/AdminLTE-aside.png" alt="">
+            <h2 class="fw-bold mt-5">Code Description</h2>
+            <p>This can be achieved using string manipulation functions in PHP. First we find the position of the desired character in the string using strpos(), substr(), ltrim, and trim()</p>
+            <textarea id='text-area' rows="30" class="language-php" disabled="true" >
+/**
+ * Class and Function List:
+ * Function list:
+ * - asideNav()
+ * - dropdownLevel1()
+ * - dropdownLevel2()
+ * - array_depth()
+ * Classes list:
+ * - Aside
+ */
+class Asides {
+
+    //EXPLANATION: navFunction( link, title , font-awesome icon class , badge class (optional), badge contents(optional), extra classes(optional) );
+    public function asideNav($slug = "#", $nav_title = 'Title', $nav_icon = 'fas fa-tachometer-alt', $badge = 'badge-danger', $bagde_contents = null, $extra_classes = null) {
+
+        $active = "";
+        $slug_check = $slug;
+
+        //check and remove & if found in the url. Aparently the active nav doest work when & is in the url
+        if (strpos($slug, "&")) {
+            $slug_check = substr($slug, 0, strpos($slug, '&'));
+        }
+
+        if (isset($_GET[$slug_check])) {
+            $active = "active";
+        }
+        echo "<li class='nav-item'>
+               <a id='$slug_check' href='?$slug' class='nav-link $extra_classes $active'>
+                  <i class='nav-icon $nav_icon'></i>
+                  <p>$nav_title <span class='right badge $badge'>$bagde_contents</span></p>
+               </a>
+            </li>";
+    }
+
+    public function dropdownLevel1($dropdownArray, $dropdownTitle, $dropdownIcon) {
+
+        $id2 = rand();
+        $id3 = rand();
+
+        print " <li id='$id2' class='nav-item'>
+              <a href='#' id='$id3' class='nav-link'>
+                <i class='nav-icon $dropdownIcon'></i>
+                 <p>$dropdownTitle<i class='nav-icon right fas fa-angle-left'></i></p>
+              </a>
+                   <ul class='nav nav-treeview'>";
+
+        foreach ($dropdownArray as $a) {
+
+            if (empty($a[0])) {
+                $a[0] = "#";
+            }
+            if (empty($a[1])) {
+                $a[1] = 'Title';
+            }
+            if (empty($a[2])) {
+                $a[2] = 'fas fa-tachometer-alt';
+            }
+            if (empty($a[3])) {
+                $a[3] = 'badge-danger';
+            }
+            if (empty($a[4])) {
+                $a[4] = null;
+            }
+            if (empty($a[5])) {
+                $a[5] = null;
+            }
+
+            if (strpos($a[0], "&")) {
+
+                $a_slug = substr($a[0], 0, strpos($a[0], '&'));
+            }
+            else {
+                $a_slug = $a[0];
+            }
+
+            if (isset($_GET[$a_slug])) {
+
+                print "<script>$('#$id2').addClass('menu-open') </script>";
+                print "<script>$('#$id3').addClass('active') </script>";
+
+                $active = "active";
+            }
+            else {
+                $active = "";
+            }
+
+            print "<li class='nav-item'>
+                   <a href='?{$a[0]}' class='nav-link {$a[5]} $active'>
+                      <i class='nav-icon {$a[2]}'></i>
+                      <p>{$a[1]}<span class='right badge {$a[3]}'>$a[4]</span></p>
+                   </a>
+                  </li>";
+        }
+        print "</ul></li>";
+
+    }
+    public function dropdownLevel2($dropdownArray, $dropdownTitle2, $dropdownIcon2, $dropdownTitle, $dropdownIcon) {
+
+        $id2 = rand();
+        $id3 = rand();
+        $id4 = rand();
+        $id5 = rand();
+
+        print " <li id='$id4' class='nav-item first-open'>
+              <a href='#' id='$id5' class='nav-link first-active'>
+                <i class='nav-icon $dropdownIcon2'></i>
+                 <p>$dropdownTitle2<i class='nav-icon right fas fa-angle-left'></i></p>
+              </a>
+                   <ul class='nav nav-treeview'>";
+
+        foreach ($dropdownArray as $a) {
+
+            if ($this->array_depth($a) == 2) {
+                echo "<li id='$id2' class='nav-item second-open'>
+              <a href='#' id='$id3' class='nav-link second-active'>
+                <i class='nav-icon $dropdownIcon'></i>
+                 <p>$dropdownTitle<i class='nav-icon right fas fa-angle-left'></i></p>
+              </a>
+              <ul class='nav nav-treeview'>";
+
+                for ($x = 0;$x < count($a);$x++) {
+
+                    if (empty($a[$x][0])) {
+                        $a[$x][0] = "#";
+                    }
+                    if (empty($a[$x][1])) {
+                        $a[$x][1] = 'Title';
+                    }
+                    if (empty($a[$x][2])) {
+                        $a[$x][2] = 'fas fa-tachometer-alt';
+                    }
+                    if (empty($a[$x][3])) {
+                        $a[$x][3] = 'badge-danger';
+                    }
+                    if (empty($a[$x][4])) {
+                        $a[$x][4] = null;
+                    }
+                    if (empty($a[$x][5])) {
+                        $a[$x][5] = null;
+                    }
+
+                    if (strpos($a[$x][0], "&")) {
+
+                        $a_slug = substr($a[$x][0], 0, strpos($a[$x][0], '&'));
+                    }
+                    else {
+                        $a_slug = $a[$x][0];
+                    }
+
+                    if (isset($_GET[$a_slug])) {
+
+                        print "<script>$('#$id2').addClass('menu-open');</script>";
+                        print "<script>$('#$id4').addClass('menu-open');</script>";
+                        print "<script>$('#$id3').addClass('active');</script>";
+                        print "<script>$('#$id5').addClass('active');</script>";
+
+                        $active = "active";
+                    }
+                    else {
+                        $active = "";
+                    }
+
+                    print "<li class='nav-item'>
+                       <a href='?{$a[$x][0]}' class='nav-link {$a[$x][5]} $active'>
+                          <i class='nav-icon {$a[$x][2]}'></i>
+                          <p>" . $a[$x][1] . "<span class='right badge " . $a[$x][3] . "'>" . $a[$x][4] . "</span></p>
+                       </a>
+                      </li>";
+                }
+            }
+            else {
+                if (empty($a[0])) {
+                    $a[0] = "#";
+                }
+                if (empty($a[1])) {
+                    $a[1] = 'Title';
+                }
+                if (empty($a[2])) {
+                    $a[2] = 'fas fa-tachometer-alt';
+                }
+                if (empty($a[3])) {
+                    $a[3] = 'badge-danger';
+                }
+                if (empty($a[4])) {
+                    $a[4] = null;
+                }
+                if (empty($a[5])) {
+                    $a[5] = null;
+                }
+
+                if (strpos($a[0], "&")) {
+
+                    $a_slug = substr($a[0], 0, strpos($a[0], '&'));
+                }
+                else {
+                    $a_slug = $a[0];
+                }
+
+                if (isset($_GET[$a_slug])) {
+
+                    print "<script>$('#$id2').addClass('menu-open');$('#$id4').addClass('menu-open');  </script>";
+                    print "<script>$('#$id3').addClass('active'); $('#$id5').addClass('active');</script>";
+
+                    $active = "active";
+                }
+                else {
+                    $active = "";
+                }
+
+                print "<li class='nav-item'>
+                       <a href='?{$a[0]}' class='nav-link {$a[5]} $active'>
+                          <i class='nav-icon {$a[2]}'></i>
+                          <p>{$a[1]}<span class='right badge {$a[3]}'>$a[4]</span></p>
+                       </a>
+                      </li>";
+            }
+        }
+
+        print "</ul></li></ul></li>";
+
+    }
+
+    //check and return depth of nesting array 
+    public function array_depth($array) {
+        $max_indentation = 1;
+
+        $array_str = print_r($array, true);
+        $lines = explode("\n", $array_str);
+
+        foreach ($lines as $line) {
+            $indentation = (strlen($line) - strlen(ltrim($line))) / 4;
+
+            if ($indentation > $max_indentation) {
+                $max_indentation = $indentation;
+            }
+        }
+
+        return ceil(($max_indentation - 1) / 2) + 1;
+    }
+
+}         
+            </textarea>
+            <h2 class="fw-bold mt-5">How this code works?</h2>
+            <p></p>
+            <h3>Create new object</h3>
+            <pre>
+                <code class="language-php">
+                    $nav = new Aside;  
+                </code>
+            </pre>
+            <h3>Level 1 Unordered List Element</h3>
+            <textarea id='text-area' rows="6" class="language-php" disabled="true" >
+navFunction(link, title, font - awesomeiconclass , badgeclass (optional) , badgecontents(optional) , extraclasses(optional));
+                
+//eg.
+
+$nav->asideNav("dashboard", 'Dashboard', 'fas fa-school');
+            </textarea>
+            <h3>Level 1 Dropdown With Nested Level 2 Unordered List Element</h3>
+            <p>Create an array with the the parameters accepted by the <code>dropdownLevel1()</code> method. This multidimensional array has a depth of 2 or less</p>
+            
+            <textarea id='text-area' rows="23" class="language-php" disabled="true" >
+dropdownLevel1($dropdownArray, $dropdownTitle, $dropdownIcon);
+        
+//eg.
+
+$dropdown = array(
+    array(
+        "population",
+        "Form Classes",
+        "fas fa-user-graduate"
+    ),
+    array(
+        "Attendance",
+        "Student Attendance",
+        "fas fa-users"
+    ),
+    array(
+        "StudentRegistration",
+        "Add Student",
+        "fas fa-user-alt"
+    )
+);
+$nav->dropdownLevel1($dropdown, 'Students', 'fas fa-user-graduate');
+            </textarea>
+            <h3>Level 2 Dropdown With Nested Level 3 Unordered List Element</h3>
+            <p>Create an array with the the parameters accepted by the <code>dropdownLevel2()</code> method. This multidimensional array has a depth of 3 or less</p>
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                    <use xlink:href="#exclamation-triangle-fill" /></svg>
+                <div>
+                    This class has limitations
+                </div>
+            </div>
+            <textarea id='text-area' rows="24" class="language-php" disabled="true" >
+           
+$dropdown = array(
+    array(
+        "ParentRegistration",
+        "Add Parent",
+        "fas fa-user-alt"
+    ) ,
+    array(
+        array(
+            "viewparents",
+            "Parents",
+            "fas fa-user-friends"
+        ) ,
+        array(
+            "viewchildren",
+            "Children",
+            "fas fa-user-friends"
+        )
+    )
+
+);
+
+$nav->dropdownLevel2($dropdown, 'Guardians', 'fas fa-user-graduate', 'Parents', 'fas fa-user-graduate');
+            </textarea>
+            <h2 class="fw-bold mt-5">Issues implementing this code</h2>
+            <div class="callout callout-primary rounded">
+                <h5 class="fw-bold text-danger"><i class="fa fa-info-circle me-2"></i>Note</h5>
+                This code is a nice innovation but has limitations for level 2 dropdown.
+            This code cannot process 2 or more level 2 dropdowns
+            </div>
+            
+            <h2 class="fw-bold mt-5">How this code was used?</h2>
+            <pre class="mb-0">
+                <code class="language-php">
+               
+                </code>
+            </pre>  
+            <h5 class="fw-bold">References</h5>
+            <ul>
+                <li><a href="https://stackoverflow.com/questions/262891/is-there-a-way-to-find-out-how-deep-a-php-array-is">https://stackoverflow.com | Check depth of nesting in multidimensional  arrays</a></li>
+            </ul>
+    </div>
+    <!-- Section 3 End -->
+    <!-- Section Start -->
+    <div id='php-how-to-age-birthday-from-year' class="container py-5">
+    <h1 class="fw-bold display-4"><span class="text-primary">PHP:</span>HOW TO CALCULATE AGE?<span class="text-success"></span></h1>
+    
+    <h2 class="fw-bold mt-5">Code Description</h2>
+    <p>The age of an individual can be calculated from the user's date of birth. the user's date of birth must be in the format yyyy-mm-dd.</p>
+    <pre>
+        <code class="language-php">
+
+$birth_date = strtotime('Y-m-d');
+$now = time();
+$age = $now-$birth_date;
+$a = $age/60/60/24/365.25;
+echo floor($a);
+
+        </code>
+    </pre>
+   
+    <h3 class="fw-bold mt-5">How this code was used?</h3>
+    <pre class="mb-0">
+        <code class="language-php">
+function showAge($DOB){
+    $birth_date = strtotime($DOB);
+    $now = time();
+    $age = $now-$birth_date;
+    $a = $age/60/60/24/365.25;
+    return floor($a);
+} 
+
+showAge('2005-06-08');
+if the year is
+//output: 16 
+        </code>
+    </pre>  
+    <h5 class="fw-bold">References</h5>
+    <ul>
+        <li><a href="https://stackoverflow.com/questions/3776682/php-calculate-age?page=2&tab=scoredesc#tab-top" target="_blank">https://stackoverflow.com | PHP calculate age</a></li>
+    </ul>
+    </div>
+    <!-- Section End -->
+
+    <!-- Section Start -->
+    <div id='' class="container py-5">
+        <h1 class="fw-bold display-4"><span class="text-primary">PHP:</span> TITLE<span class="text-success"></span></h1>
+        
+        <h2 class="fw-bold mt-5">Code Description</h2>
+        <p>--</p>
+        <textarea id='text-area' rows="10" class="language-php" disabled="true" >
+            --
+        </textarea>
+        <pre>
+            <code class="language-php">
+            ---   
+            </code>
+        </pre>
+        <h2 class="fw-bold mt-5">Issues implementing this code</h2>
+        <p></p>
+        <pre>
+            <code class="language-php">
+            -- 
+            </code>
+        </pre>
+        <h2 class="fw-bold mt-5">How this code was used?</h2>
+        <pre class="mb-0">
+            <code class="language-php">
+        ---
+            </code>
+        </pre>  
+        <h5 class="fw-bold">References</h5>
+        <ul>
+            <li><a href="#"></a>Link</li>
+        </ul>
+    </div>
+    <!-- Section End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/highlight/highlight.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
